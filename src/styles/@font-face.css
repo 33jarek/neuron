@@ -1,0 +1,16 @@
+@font-face {
+  font-family: GeistMono;
+  src: url(/fonts/GeistMono.ttf);
+}
+@font-face {
+  font-family: GeistMonoItalic;
+  src: url(/fonts/GeistMonoItalic.ttf);
+}
+@font-face {
+  font-family: Inter;
+  src: url(/fonts/Inter.ttf);
+}
+@font-face {
+  font-family: InterItalic;
+  src: url(/fonts/InterItalic.ttf);
+}

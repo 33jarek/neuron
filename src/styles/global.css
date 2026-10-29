@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@import "./@theme.css";
+@import "./@font-face.css";
+
+:root {
+  background-color: #060814;
+  font-family: Inter;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 2.1s ease-in-out both;
+  animation-delay: 0.8s;
+}

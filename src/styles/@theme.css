@@ -1,0 +1,34 @@
+@theme {
+  /* ==========================================================================
+     Background colors (6 kolorów z obrazka)
+     ========================================================================== */
+  --color-bg-cyan: #6ee7f9;
+  --color-bg-card: #111a26;
+  --color-bg-surface: #0b111a;
+  --color-bg-overlay: #070b11bf;
+  --color-bg-overlay-subtle: #070b1199;
+  --color-bg-dark: #070b11;
+
+  /* ==========================================================================
+     Text colors (7 kolorów z obrazka)
+     ========================================================================== */
+  --color-text-primary: #e6edf5;
+  --color-text-cyan: #6ee7f9;
+  --color-text-muted: #8a9bb0;
+  --color-text-link: #0000ee;
+  --color-text-link-visited: #551a8b;
+  --color-text-dark: #070b11;
+  --color-text-black: #000000;
+
+  /* ==========================================================================
+     Krótkie aliasy semantyczne (np. bg-dark, bg-surface, text-primary, text-muted)
+     ========================================================================== */
+  --color-cyan: #6ee7f9;
+  --color-card: #111a26;
+  --color-surface: #0b111a;
+  --color-dark: #070b11;
+  --color-primary: #e6edf5;
+  --color-muted: #8a9bb0;
+  --color-link: #0000ee;
+  --color-link-visited: #551a8b;
+}
