@@ -1,6 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import GradientASCII from "../components/Asci";
 import TechText from "../components/TechText";
+import { Logo } from "../components/Logo";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -44,19 +45,23 @@ function Index() {
             />
           </div>
         </div>
-        <div className="min-h-screen w-full p-8">
-          <div className="bg-red-900 flex flex-col sm:flex-row justify-center items-center gap-12 sm:gap-16 md:gap-24">
-            <img
-              src="/umg.png"
-              alt="Uniwersytet Morski w Gdyni"
-              className="h-32 sm:h-40 md:h-48 w-auto object-contain transition-transform duration-300 hover:scale-105"
-            />
-            <img
-              src="/wi.png"
-              alt="Wydział Informatyki"
-              className="h-32 sm:h-40 md:h-48 w-auto object-contain transition-transform duration-300 hover:scale-105"
-            />
-          </div>
+        <div className="w-full flex justify-center p-8">
+          <header className="flex-col w-full items-center sm:flex-row">
+            <div className="flex justify-around items-center w-full gap-12 sm:gap-16 md:gap-24">
+              <Logo name="umg" height={128} />
+              <Link to={"/"} className="font-[GeistMono] font-bold text-6xl">
+                neμron
+              </Link>
+              <Logo name="wi" height={128} />
+            </div>
+            <div className="flex gap-16 items-center justify-center text-xl">
+              #TODO: Jebnac jakies efekty i routy skonczyc
+              <Link>Projekty</Link>
+              <Link>Artykuły</Link>
+              <Link>Spotkania</Link>
+              <Link>Kontakt</Link>
+            </div>
+          </header>
         </div>
       </main>
     </div>
