@@ -11,9 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ArtykulyRouteImport } from './routes/artykuly'
-import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as InfoRouteImport } from './routes/info'
 import { Route as ProjektyRouteImport } from './routes/projekty'
-import { Route as SpotkaniaRouteImport } from './routes/spotkania'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -25,9 +24,9 @@ const ArtykulyRoute = ArtykulyRouteImport.update({
   path: '/artykuly',
   getParentRoute: () => rootRouteImport,
 } as any)
-const KontaktRoute = KontaktRouteImport.update({
-  id: '/kontakt',
-  path: '/kontakt',
+const InfoRoute = InfoRouteImport.update({
+  id: '/info',
+  path: '/info',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjektyRoute = ProjektyRouteImport.update({
@@ -35,48 +34,39 @@ const ProjektyRoute = ProjektyRouteImport.update({
   path: '/projekty',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SpotkaniaRoute = SpotkaniaRouteImport.update({
-  id: '/spotkania',
-  path: '/spotkania',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/artykuly': typeof ArtykulyRoute
-  '/kontakt': typeof KontaktRoute
+  '/info': typeof InfoRoute
   '/projekty': typeof ProjektyRoute
-  '/spotkania': typeof SpotkaniaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/artykuly': typeof ArtykulyRoute
-  '/kontakt': typeof KontaktRoute
+  '/info': typeof InfoRoute
   '/projekty': typeof ProjektyRoute
-  '/spotkania': typeof SpotkaniaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/artykuly': typeof ArtykulyRoute
-  '/kontakt': typeof KontaktRoute
+  '/info': typeof InfoRoute
   '/projekty': typeof ProjektyRoute
-  '/spotkania': typeof SpotkaniaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/artykuly' | '/kontakt' | '/projekty' | '/spotkania'
+  fullPaths: '/' | '/artykuly' | '/info' | '/projekty'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/artykuly' | '/kontakt' | '/projekty' | '/spotkania'
-  id: '__root__' | '/' | '/artykuly' | '/kontakt' | '/projekty' | '/spotkania'
+  to: '/' | '/artykuly' | '/info' | '/projekty'
+  id: '__root__' | '/' | '/artykuly' | '/info' | '/projekty'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ArtykulyRoute: typeof ArtykulyRoute
-  KontaktRoute: typeof KontaktRoute
+  InfoRoute: typeof InfoRoute
   ProjektyRoute: typeof ProjektyRoute
-  SpotkaniaRoute: typeof SpotkaniaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -95,11 +85,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ArtykulyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/kontakt': {
-      id: '/kontakt'
-      path: '/kontakt'
-      fullPath: '/kontakt'
-      preLoaderRoute: typeof KontaktRouteImport
+    '/info': {
+      id: '/info'
+      path: '/info'
+      fullPath: '/info'
+      preLoaderRoute: typeof InfoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/projekty': {
@@ -109,22 +99,14 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjektyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/spotkania': {
-      id: '/spotkania'
-      path: '/spotkania'
-      fullPath: '/spotkania'
-      preLoaderRoute: typeof SpotkaniaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ArtykulyRoute: ArtykulyRoute,
-  KontaktRoute: KontaktRoute,
+  InfoRoute: InfoRoute,
   ProjektyRoute: ProjektyRoute,
-  SpotkaniaRoute: SpotkaniaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

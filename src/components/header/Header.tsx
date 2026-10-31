@@ -19,8 +19,8 @@ export const Header = () => {
         {/* #TODO: Jebnac jakies efekty i routy skonczyc */}
         <NavLinks to={"/projekty"}>Projekty</NavLinks>
         <NavLinks to={"/artykuly"}>Artykuły</NavLinks>
-        <NavLinks to={"/spotkania"}>Spotkania</NavLinks>
-        <NavLinks to={"/kontakt"}>Kontakt</NavLinks>
+        <NavLinks to={"/#onas"}>O nas</NavLinks>
+        <NavLinks to={"/info"}>Info</NavLinks>
       </nav>
     </header>
   );
