@@ -30,8 +30,8 @@ export const Sections = ({ name, direction = "left" }: SectionProps) => {
   const isRight = direction === "right";
 
   const bgClass = isRight
-    ? "bg-white/[0.03] backdrop-blur-md border border-white/10 shadow-2xl"
-    : "bg-card/70 backdrop-blur-md border border-white/10 shadow-2xl";
+    ? "bg-black/20 backdrop-blur-xs border border-white/5 shadow-2xl"
+    : "bg-black/20 backdrop-blur-xs border border-white/5 shadow-2xl";
 
   return (
     <div className={`w-full flex ${isRight ? "justify-end" : "justify-start"}`}>
@@ -45,7 +45,10 @@ export const Sections = ({ name, direction = "left" }: SectionProps) => {
             isRight ? "flex-row-reverse" : "flex-row"
           }`}
         >
-          <Icon name={sectionData.icon} className="text-white h-7 w-7 shrink-0" />
+          <Icon
+            name={sectionData.icon}
+            className="text-primary h-7 w-7 shrink-0"
+          />
           <h3 className="text-xl sm:text-2xl font-bold text-primary">
             {sectionData.name}
           </h3>

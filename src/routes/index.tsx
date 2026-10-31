@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import TechText from "../components/TechText";
-import { Header } from "../components/header/Header";
+import { HeaderLanding } from "../components/header/HeaderLanding";
 import { Background } from "../components/landing/Background";
 import { Sections } from "../components/landing/Sections";
 import Waves from "../components/landing/LinesBackground";
+import { PersonCard } from "../components/landing/PersonCard";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -39,9 +40,9 @@ function Index() {
             className="absolute -top-72 bottom-0 left-0 right-0 pointer-events-none -z-10 overflow-hidden"
             style={{
               maskImage:
-                "linear-gradient(to bottom, transparent 0%, black 25%, black 85%, transparent 100%), linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)",
+                "linear-gradient(to bottom, transparent 0%, black 25%, black 85%, transparent 100%), linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%)",
               WebkitMaskImage:
-                "linear-gradient(to bottom, transparent 0%, black 25%, black 85%, transparent 100%), linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)",
+                "linear-gradient(to bottom, transparent 0%, black 25%, black 85%, transparent 100%), linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%)",
               maskComposite: "intersect",
               WebkitMaskComposite: "destination-in",
             }}
@@ -62,8 +63,8 @@ function Index() {
             />
           </div>
 
-          <div className="w-full max-w-7xl mx-auto flex justify-center px-4 sm:px-8 py-8">
-            <Header />
+          <div className="w-full mb-8">
+            <HeaderLanding />
           </div>
 
           <section
@@ -93,6 +94,12 @@ function Index() {
             <h2 className="text-4xl sm:text-5xl font-bold text-primary mb-4 text-center">
               Zarząd koła
             </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 justify-center max-w-5xl mx-auto">
+              <PersonCard name="Juliusz Losiński" role="Opiekun" />
+              <PersonCard name="Mateusz Miller" role="Zastępca Opiekuna" />
+              <PersonCard name="Jakub Przybylski" role="Przewodniczący" />
+              <PersonCard name="Olivier Starostka" role="Skarbnik" />
+            </div>
           </section>
         </div>
       </main>
