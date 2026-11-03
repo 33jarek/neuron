@@ -328,12 +328,26 @@ const StrokeText = ({
     } else {
       timeline = build();
       if (trigger === "scroll") {
-        scrollTrigger = ScrollTrigger.create({
-          trigger: root,
-          start: "top 82%",
-          once: true,
-          onEnter: () => timeline?.play(0),
-        });
+        if (typeof IntersectionObserver !== "undefined") {
+          const observer = new IntersectionObserver(
+            ([entry]) => {
+              if (entry.isIntersecting) {
+                timeline?.play(0);
+                observer.disconnect();
+              }
+            },
+            { threshold: 0.1, rootMargin: "0px 0px -15% 0px" },
+          );
+          observer.observe(root);
+          listeners.push(() => observer.disconnect());
+        } else {
+          scrollTrigger = ScrollTrigger.create({
+            trigger: root,
+            start: "top 85%",
+            once: true,
+            onEnter: () => timeline?.play(0),
+          });
+        }
       } else {
         timeline.play(0);
       }

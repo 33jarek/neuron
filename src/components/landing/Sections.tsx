@@ -75,7 +75,7 @@ export const Sections = ({ name, direction = "left" }: SectionProps) => {
                 fillDelay={0.2}
                 stagger={0.05}
                 ease="power2.out"
-                trigger="mount"
+                trigger="scroll"
                 fillMode="wipe"
                 wipeFrom="left"
                 fontSize={128}
