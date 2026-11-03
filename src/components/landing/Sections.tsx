@@ -30,13 +30,13 @@ export const Sections = ({ name, direction = "left" }: SectionProps) => {
   const isRight = direction === "right";
 
   const bgClass = isRight
-    ? "bg-black/20 backdrop-blur-xs border border-white/5 shadow-2xl"
-    : "bg-black/20 backdrop-blur-xs border border-white/5 shadow-2xl";
+    ? "bg-black/20 backdrop-blur-xs border-2 border-white/15 shadow-2xl"
+    : "bg-black/20 backdrop-blur-xs border-2 border-white/15 shadow-2xl";
 
   return (
     <div className={`w-full flex ${isRight ? "justify-end" : "justify-start"}`}>
       <article
-        className={`w-full max-w-3xl lg:max-w-4xl rounded-2xl px-6 py-4 sm:px-8 sm:py-4 shadow-lg font-[Inter] ${bgClass} ${
+        className={`w-full max-w-3xl lg:max-w-4xl rounded-lg px-6 py-4 sm:px-8 sm:py-4 shadow-lg font-[Inter] ${bgClass} ${
           isRight ? "text-right" : "text-left"
         }`}
       >

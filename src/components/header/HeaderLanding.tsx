@@ -3,7 +3,7 @@ import { NavLinks } from "./NavLinks";
 
 export const HeaderLanding = () => {
   return (
-    <div className="w-full bg-black/20 backdrop-blur-xs border-y border-white/5 shadow-2xl">
+    <div className="">
       <header className="max-w-7xl mx-auto flex w-full justify-around items-center gap-8 sm:gap-12 md:gap-16 px-4 sm:px-8 py-6">
         <Logo name="umg" height={128} />
         <nav className="flex gap-8 sm:gap-12 md:gap-16 items-center justify-center text-xl sm:text-2xl font-[Inter]">

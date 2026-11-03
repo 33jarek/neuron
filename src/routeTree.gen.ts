@@ -10,63 +10,73 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ArtykulyRouteImport } from './routes/artykuly'
-import { Route as InfoRouteImport } from './routes/info'
-import { Route as ProjektyRouteImport } from './routes/projekty'
+import { Route as LayoutRouteImport } from './routes/_layout'
+import { Route as LayoutArtykulyRouteImport } from './routes/_layout/artykuly'
+import { Route as LayoutInfoRouteImport } from './routes/_layout/info'
+import { Route as LayoutProjektyRouteImport } from './routes/_layout/projekty'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ArtykulyRoute = ArtykulyRouteImport.update({
+const LayoutRoute = LayoutRouteImport.update({
+  id: '/_layout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LayoutArtykulyRoute = LayoutArtykulyRouteImport.update({
   id: '/artykuly',
   path: '/artykuly',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => LayoutRoute,
 } as any)
-const InfoRoute = InfoRouteImport.update({
+const LayoutInfoRoute = LayoutInfoRouteImport.update({
   id: '/info',
   path: '/info',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => LayoutRoute,
 } as any)
-const ProjektyRoute = ProjektyRouteImport.update({
+const LayoutProjektyRoute = LayoutProjektyRouteImport.update({
   id: '/projekty',
   path: '/projekty',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => LayoutRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/artykuly': typeof ArtykulyRoute
-  '/info': typeof InfoRoute
-  '/projekty': typeof ProjektyRoute
+  '/artykuly': typeof LayoutArtykulyRoute
+  '/info': typeof LayoutInfoRoute
+  '/projekty': typeof LayoutProjektyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/artykuly': typeof ArtykulyRoute
-  '/info': typeof InfoRoute
-  '/projekty': typeof ProjektyRoute
+  '/artykuly': typeof LayoutArtykulyRoute
+  '/info': typeof LayoutInfoRoute
+  '/projekty': typeof LayoutProjektyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/artykuly': typeof ArtykulyRoute
-  '/info': typeof InfoRoute
-  '/projekty': typeof ProjektyRoute
+  '/_layout': typeof LayoutRouteWithChildren
+  '/_layout/artykuly': typeof LayoutArtykulyRoute
+  '/_layout/info': typeof LayoutInfoRoute
+  '/_layout/projekty': typeof LayoutProjektyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths: '/' | '/artykuly' | '/info' | '/projekty'
   fileRoutesByTo: FileRoutesByTo
   to: '/' | '/artykuly' | '/info' | '/projekty'
-  id: '__root__' | '/' | '/artykuly' | '/info' | '/projekty'
+  id:
+    | '__root__'
+    | '/'
+    | '/_layout'
+    | '/_layout/artykuly'
+    | '/_layout/info'
+    | '/_layout/projekty'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ArtykulyRoute: typeof ArtykulyRoute
-  InfoRoute: typeof InfoRoute
-  ProjektyRoute: typeof ProjektyRoute
+  LayoutRoute: typeof LayoutRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -78,35 +88,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/artykuly': {
-      id: '/artykuly'
+    '/_layout': {
+      id: '/_layout'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof LayoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_layout/artykuly': {
+      id: '/_layout/artykuly'
       path: '/artykuly'
       fullPath: '/artykuly'
-      preLoaderRoute: typeof ArtykulyRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof LayoutArtykulyRouteImport
+      parentRoute: typeof LayoutRoute
     }
-    '/info': {
-      id: '/info'
+    '/_layout/info': {
+      id: '/_layout/info'
       path: '/info'
       fullPath: '/info'
-      preLoaderRoute: typeof InfoRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof LayoutInfoRouteImport
+      parentRoute: typeof LayoutRoute
     }
-    '/projekty': {
-      id: '/projekty'
+    '/_layout/projekty': {
+      id: '/_layout/projekty'
       path: '/projekty'
       fullPath: '/projekty'
-      preLoaderRoute: typeof ProjektyRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof LayoutProjektyRouteImport
+      parentRoute: typeof LayoutRoute
     }
   }
 }
 
+interface LayoutRouteChildren {
+  LayoutArtykulyRoute: typeof LayoutArtykulyRoute
+  LayoutInfoRoute: typeof LayoutInfoRoute
+  LayoutProjektyRoute: typeof LayoutProjektyRoute
+}
+
+const LayoutRouteChildren: LayoutRouteChildren = {
+  LayoutArtykulyRoute: LayoutArtykulyRoute,
+  LayoutInfoRoute: LayoutInfoRoute,
+  LayoutProjektyRoute: LayoutProjektyRoute,
+}
+
+const LayoutRouteWithChildren =
+  LayoutRoute._addFileChildren(LayoutRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ArtykulyRoute: ArtykulyRoute,
-  InfoRoute: InfoRoute,
-  ProjektyRoute: ProjektyRoute,
+  LayoutRoute: LayoutRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
