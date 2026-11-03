@@ -48,7 +48,7 @@ function Index() {
             }}
           >
             <Waves
-              lineColor="#6ee7f9"
+              lineColor="#3A7F85"
               accentColor="#6ee7f9"
               fade={0.3}
               spacing={12}

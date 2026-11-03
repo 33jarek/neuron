@@ -3,6 +3,7 @@
      Background colors (6 kolorów z obrazka)
      ========================================================================== */
   --color-bg-cyan: #6ee7f9;
+  --color-bg-darkCyan: #3a7f85;
   --color-bg-card: #111a26;
   --color-bg-surface: #0b111a;
   --color-bg-overlay: #070b11bf;
@@ -14,6 +15,7 @@
      ========================================================================== */
   --color-text-primary: #e6edf5;
   --color-text-cyan: #6ee7f9;
+  --color-text-darkCyan: #3a7f85;
   --color-text-muted: #8a9bb0;
   --color-text-link: #0000ee;
   --color-text-link-visited: #551a8b;
@@ -24,6 +26,7 @@
      Krótkie aliasy semantyczne (np. bg-dark, bg-surface, text-primary, text-muted)
      ========================================================================== */
   --color-cyan: #6ee7f9;
+  --color-darkCyan: #3a7f85;
   --color-card: #111a26;
   --color-surface: #0b111a;
   --color-dark: #070b11;

@@ -4,7 +4,7 @@ export const Background = () => {
   return (
     <div className="absolute top-0 left-0 h-screen w-full -z-10 pointer-events-none overflow-hidden">
       <GradientASCII
-        colors={["#111a26", "#f6f8ff", "#a5d8ff", "#38bdf8"]}
+        colors={["#111a26", "#f6f8ff", "#6ee7f9", "#3a7f85"]}
         shape="horizon"
         characters=" =+xX0S8#@"
         cellSize={16}

@@ -23,7 +23,7 @@ function LayoutComponent() {
         }}
       >
         <Waves
-          lineColor="#1e293b"
+          lineColor="#3A7F85"
           accentColor="#38bdf8"
           fade={0.3}
           spacing={12}
@@ -46,4 +46,3 @@ function LayoutComponent() {
     </div>
   );
 }
-
