@@ -3,10 +3,6 @@ import DecryptedText from "../DecryptingText";
 import BlurText from "../BlurText";
 import StrokeText from "../StrokeText";
 
-const handleAnimationComplete = () => {
-  console.log("Animation completed!");
-};
-
 const section = {
   GameDev: {
     name: "Gry komputerowe",
@@ -134,7 +130,6 @@ export const Sections = ({ name, direction = "left" }: SectionProps) => {
                 stepDuration={0.45}
                 blur={8}
                 distance={40}
-                onAnimationComplete={handleAnimationComplete}
                 focusOnHover
                 fromColor="#3a7f85"
               />

@@ -5,6 +5,7 @@ import { Background } from "../components/landing/Background";
 import { Sections } from "../components/landing/Sections";
 import Waves from "../components/landing/LinesBackground";
 import { PersonCard } from "../components/landing/PersonCard";
+import { Footer } from "../components/Footer";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -103,6 +104,7 @@ function Index() {
           </section>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

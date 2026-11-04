@@ -23,7 +23,7 @@ function RouteComponent() {
               <Icon name="mail" className="h-8" /> kolonaukoweneuron@gmail.com
             </li>
             <li className="flex justify-start items-center gap-2">
-              <Icon name="phone" className="h-8" /> 577-507-807
+              <Icon name="phone" className="h-8" /> 577 507 807
             </li>
             <li className="flex justify-start items-center gap-2">
               <Icon name="pin" className="h-8" /> F205
