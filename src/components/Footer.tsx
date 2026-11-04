@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <div className="flex-col w-dvw border-t border-t-cyan/10 py-10 text-muted/30">
+    <div className="relative z-10 flex flex-col w-full bg-[#060814] border-t border-t-cyan/10 py-10 text-muted/30">
       <div className="flex justify-center gap-16 py-5">
         <div className="flex flex-col">
           <h6 className="text-primary/40">KN Neuron, WI</h6>

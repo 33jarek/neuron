@@ -95,6 +95,8 @@ function Index() {
             <h2 className="text-4xl sm:text-5xl font-bold text-primary mb-4 text-center">
               Zarząd koła
             </h2>
+
+            {/* TODO: https://api.github.com/orgs/kn-neuron-umg/teams/board -- automatycznie ma być */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 justify-center max-w-5xl mx-auto">
               <PersonCard name="Juliusz Losiński" role="Opiekun" />
               <PersonCard name="Mateusz Miller" role="Zastępca Opiekuna" />
