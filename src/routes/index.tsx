@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import TechText from "../components/TechText";
-import { HeaderLanding } from "../components/header/HeaderLanding";
 import { Background } from "../components/landing/Background";
 import { Sections } from "../components/landing/Sections";
 import Waves from "../components/landing/LinesBackground";
 import { PersonCard } from "../components/landing/PersonCard";
 import { Footer } from "../components/Footer";
+import { Header } from "../components/header/Header";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -13,10 +13,10 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="relative min-h-screen w-full text-primary isolate">
+    <div className="relative min-h-screen w-full text-primary isolate overflow-x-hidden">
       <Background />
-      <main className="relative z-10">
-        <div className="flex min-h-screen flex-col items-center justify-center p-8">
+      <main className="relative z-10 w-full">
+        <div className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8">
           <div style={{ width: "100%", height: "480px", position: "relative" }}>
             <TechText
               text="neμron"
@@ -65,7 +65,7 @@ function Index() {
           </div>
 
           <div className="w-full mb-8">
-            <HeaderLanding />
+            <Header />
           </div>
 
           <section
@@ -74,10 +74,10 @@ function Index() {
           >
             <div className="text-center mb-12">
               <h2 className="text-4xl sm:text-5xl font-bold text-primary mb-4">
-                Lorem ipsum
+                Poznaj nasze sekcje
               </h2>
               <p className="text-muted text-lg sm:text-xl max-w-2xl mx-auto line-clamp-2">
-                Lorem ipsum blah blah blah blah
+                Rozwijaj się w przyszłościowych odłamach informatyki
               </p>
             </div>
 

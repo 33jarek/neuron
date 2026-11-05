@@ -2,6 +2,17 @@
 @import "./@theme.css";
 @import "./@font-face.css";
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 :root {
   background-color: #060814;
   font-family: Inter;

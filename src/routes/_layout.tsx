@@ -9,7 +9,7 @@ export const Route = createFileRoute("/_layout")({
 
 function LayoutComponent() {
   return (
-    <div className="relative min-h-screen flex flex-col text-primary isolate">
+    <div className="relative min-h-screen flex flex-col text-primary isolate overflow-x-hidden">
       <div className="relative flex-1 flex flex-col">
         {/* Waves background */}
         <div
