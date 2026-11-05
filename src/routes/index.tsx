@@ -64,14 +64,15 @@ function Index() {
             />
           </div>
 
-          <div className="w-full mb-8">
-            <Header />
-          </div>
+          <div className="animate-landing-entry">
+            <div className="w-full mb-8">
+              <Header />
+            </div>
 
-          <section
-            id="onas"
-            className="w-full max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-16 font-[Inter]"
-          >
+            <section
+              id="onas"
+              className="w-full max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-16 font-[Inter]"
+            >
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4">
                 Poznaj nasze sekcje
@@ -86,24 +87,25 @@ function Index() {
               <Sections name="AI" direction="right" />
               <Sections name="Kryptografia" direction="left" />
             </div>
-          </section>
+            </section>
 
-          <section
-            id="zarzad"
-            className="w-full max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-16 font-[Inter]"
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 text-center">
-              Zarząd koła
-            </h2>
+            <section
+              id="zarzad"
+              className="w-full max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-16 font-[Inter]"
+            >
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 text-center">
+                Zarząd koła
+              </h2>
 
-            {/* TODO: https://api.github.com/orgs/kn-neuron-umg/teams/board -- automatycznie ma być */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 justify-center max-w-5xl mx-auto">
-              <PersonCard name="Juliusz Losiński" role="Opiekun" />
-              <PersonCard name="Mateusz Miller" role="Zastępca Opiekuna" />
-              <PersonCard name="Jakub Przybylski" role="Przewodniczący" />
-              <PersonCard name="Olivier Starostka" role="Skarbnik" />
-            </div>
-          </section>
+              {/* TODO: https://api.github.com/orgs/kn-neuron-umg/teams/board -- automatycznie ma być */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 justify-center max-w-5xl mx-auto">
+                <PersonCard name="Juliusz Losiński" role="Opiekun" />
+                <PersonCard name="Mateusz Miller" role="Zastępca Opiekuna" />
+                <PersonCard name="Jakub Przybylski" role="Przewodniczący" />
+                <PersonCard name="Olivier Starostka" role="Skarbnik" />
+              </div>
+            </section>
+          </div>
         </div>
       </main>
       <Footer />

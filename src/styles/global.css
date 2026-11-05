@@ -31,3 +31,28 @@ body {
   animation: fadeIn 2.1s ease-in-out both;
   animation-delay: 0.8s;
 }
+
+@keyframes landingEntry {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.animate-landing-entry {
+  opacity: 0;
+  animation: landingEntry 1.2s cubic-bezier(0.22, 1, 0.36, 1) 2s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-landing-entry {
+    opacity: 1;
+    animation: none;
+  }
+}
