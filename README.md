@@ -39,3 +39,7 @@ Run the linter:
 ```bash
 npm run lint
 ```
+
+## Credits
+
+Created by [Patryk Jarosz](https://github.com/33jarek).
