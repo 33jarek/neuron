@@ -6,7 +6,9 @@ interface Repo {
 
 export const useGitRepos = () => {
   return useQuery({
-    queryKey: ["GitRepos"],
+    queryKey: ["git-repositories"],
+    staleTime: 5 * 60 * 1000,
+    gcTime: 30 * 60 * 1000,
     queryFn: async (): Promise<string[]> => {
       const res = await fetch(
         "https://api.github.com/orgs/kn-neuron-umg/repos",
@@ -23,7 +25,9 @@ export const useGitRepos = () => {
 
       const data: Repo[] = await res.json();
 
-      return data.map((repo) => repo.name);
+      return data
+        .filter((repo) => repo.name !== ".github")
+        .map((repo) => repo.name);
     },
   });
 };

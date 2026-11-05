@@ -1,32 +1,41 @@
-# React + TypeScript + Vite
+# Neuron
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+This is the official website of Neuron Science Club in Faculty of Computer Science of Gdynia Maritime University
 
-Currently, two official plugins are available:
+## Tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** - UI components and application structure
+- **TypeScript** - type-safe development
+- **Vite** - development server and production bundling
+- **TanStack Router** - file-based client-side routing
+- **TanStack Query** - asynchronous data fetching and caching
+- **Tailwind CSS 4** - responsive styling and design utilities
+- **Motion** and **GSAP** - animations and interactive effects
+- **WebGL / Canvas** - animated ASCII and wave backgrounds
+- **Oxlint** - fast JavaScript and TypeScript linting
 
-## React Compiler
+## Getting started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Install the dependencies:
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+Run the linter:
+
+```bash
+npm run lint
+```
