@@ -10,8 +10,8 @@ function RouteComponent() {
   const repos = useGitRepos();
 
   return (
-    <div className="flex flex-col justify-center items-center py-16 px-8">
-      <h1 className="text-5xl font-bold mb-8">Projekty</h1>
+    <div className="flex flex-col justify-center items-center py-12 sm:py-16 px-4 sm:px-8">
+      <h1 className="text-4xl sm:text-5xl font-bold mb-8 text-center">Projekty</h1>
 
       {repos.isLoading && (
         <p className="text-muted text-lg mt-4">Ładowanie repozytoriów...</p>
@@ -29,10 +29,10 @@ function RouteComponent() {
             key={repo}
             href={`https://github.com/kn-neuron-umg/${repo}`}
             target="_blank"
-            className="flex flex-col justify-between bg-black/20 backdrop-blur-xs border-2 border-white/15 shadow-2xl px-6 py-4 rounded-sm transition-all duration-200 hover:border-cyan/40 hover:scale-[1.01] group"
+            className="flex min-w-0 flex-col justify-between bg-black/20 backdrop-blur-xs border-2 border-white/15 shadow-2xl px-4 sm:px-6 py-4 rounded-sm transition-all duration-200 hover:border-cyan/40 hover:scale-[1.01] group"
           >
             <div className="flex items-center justify-between gap-2">
-              <h2 className="text-xl font-bold text-primary group-hover:text-cyan transition-colors">
+              <h2 className="min-w-0 break-words text-lg sm:text-xl font-bold text-primary group-hover:text-cyan transition-colors">
                 {repo}
               </h2>
               <Icon
@@ -40,7 +40,7 @@ function RouteComponent() {
                 className="h-8 group-hover:text-cyan transition-colors"
               />
             </div>
-            <p className="text-muted text-sm mt-3 font-[GeistMono]">
+            <p className="break-all text-muted text-xs sm:text-sm mt-3 font-[GeistMono]">
               kn-neuron-umg/{repo}
             </p>
           </a>

@@ -42,7 +42,7 @@ export const Sections = ({ name, direction = "left" }: SectionProps) => {
   return (
     <div className={`w-full flex ${isRight ? "justify-end" : "justify-start"}`}>
       <article
-        className={`w-full max-w-3xl lg:max-w-4xl rounded-lg px-6 py-4 sm:px-8 sm:py-4 shadow-lg font-[Inter] ${bgClass} ${
+        className={`w-full max-w-3xl lg:max-w-4xl rounded-lg px-4 py-4 sm:px-8 sm:py-4 shadow-lg font-[Inter] ${bgClass} ${
           isRight ? "text-right" : "text-left"
         }`}
       >
@@ -59,7 +59,7 @@ export const Sections = ({ name, direction = "left" }: SectionProps) => {
             <div
               role="heading"
               aria-level={3}
-              className="text-xl sm:text-2xl font-bold text-primary max-w-[165px] sm:max-w-[195px] flex items-center"
+              className="text-lg sm:text-2xl font-bold text-primary max-w-[165px] sm:max-w-[195px] flex items-center"
             >
               <StrokeText
                 text={sectionData.name}
@@ -91,7 +91,7 @@ export const Sections = ({ name, direction = "left" }: SectionProps) => {
             <div
               role="heading"
               aria-level={3}
-              className="text-xl sm:text-2xl font-bold text-primary"
+              className="text-lg sm:text-2xl font-bold text-primary"
             >
               <DecryptedText
                 text={sectionData.name}
@@ -117,7 +117,7 @@ export const Sections = ({ name, direction = "left" }: SectionProps) => {
             <div
               role="heading"
               aria-level={3}
-              className="text-xl sm:text-2xl font-bold text-primary"
+              className="text-lg sm:text-2xl font-bold text-primary"
             >
               <BlurText
                 text={sectionData.name}
@@ -137,12 +137,12 @@ export const Sections = ({ name, direction = "left" }: SectionProps) => {
           )}
 
           {(sectionData.effect as string) === "none" && (
-            <h3 className="text-xl sm:text-2xl font-bold text-primary">
+            <h3 className="text-lg sm:text-2xl font-bold text-primary">
               {sectionData.name}
             </h3>
           )}
         </div>
-        <p className="text-muted text-sm sm:text-base leading-normal">
+        <p className="text-muted text-sm sm:text-base leading-relaxed">
           {sectionData.desc}
         </p>
       </article>

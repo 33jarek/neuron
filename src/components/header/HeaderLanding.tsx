@@ -6,12 +6,12 @@ export const HeaderLanding = () => {
     <div className="w-full overflow-hidden">
       <header className="w-full max-w-7xl mx-auto grid grid-cols-2 md:flex md:justify-around items-center gap-4 sm:gap-8 md:gap-16 px-4 sm:px-8 py-6">
         <div className="justify-self-center md:justify-self-auto">
-          <Logo name="umg" className="h-16 sm:h-24 md:h-32" />
+          <Logo name="umg" className="h-12 sm:h-24 md:h-32" />
         </div>
         <div className="justify-self-center md:justify-self-auto md:order-3">
-          <Logo name="wi" className="h-16 sm:h-24 md:h-32" />
+          <Logo name="wi" className="h-12 sm:h-24 md:h-32" />
         </div>
-        <nav className="col-span-2 md:col-span-1 md:order-2 flex flex-wrap gap-3 sm:gap-8 md:gap-16 items-center justify-center text-base sm:text-xl md:text-2xl font-[Inter]">
+        <nav className="col-span-2 md:col-span-1 md:order-2 flex flex-wrap gap-x-3 gap-y-2 sm:gap-8 md:gap-16 items-center justify-center text-sm sm:text-xl md:text-2xl font-[Inter]">
           <NavLinks to={"/projekty"}>Projekty</NavLinks>
           <NavLinks to={"/artykuly"}>Artykuły</NavLinks>
           <NavLinks to={"/#onas"}>O nas</NavLinks>

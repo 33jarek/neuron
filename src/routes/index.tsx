@@ -16,8 +16,8 @@ function Index() {
     <div className="relative min-h-screen w-full text-primary isolate overflow-x-hidden">
       <Background />
       <main className="relative z-10 w-full">
-        <div className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8">
-          <div style={{ width: "100%", height: "480px", position: "relative" }}>
+        <div className="flex min-h-[70vh] flex-col items-center justify-center p-4 sm:p-8">
+          <div className="relative h-[clamp(280px,55vw,480px)] w-full">
             <TechText
               text="neμron"
               fontWeight={600}
@@ -38,7 +38,7 @@ function Index() {
         </div>
         <div className="relative w-full">
           <div
-            className="absolute -top-72 bottom-0 left-0 right-0 pointer-events-none -z-10 overflow-hidden"
+            className="absolute -top-48 sm:-top-72 bottom-0 left-0 right-0 pointer-events-none -z-10 overflow-hidden"
             style={{
               maskImage:
                 "linear-gradient(to bottom, transparent 0%, black 25%, black 85%, transparent 100%), linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%)",
@@ -70,13 +70,13 @@ function Index() {
 
           <section
             id="onas"
-            className="w-full max-w-7xl mx-auto px-4 sm:px-8 py-16 font-[Inter]"
+            className="w-full max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-16 font-[Inter]"
           >
             <div className="text-center mb-12">
-              <h2 className="text-4xl sm:text-5xl font-bold text-primary mb-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4">
                 Poznaj nasze sekcje
               </h2>
-              <p className="text-muted text-lg sm:text-xl max-w-2xl mx-auto line-clamp-2">
+              <p className="text-muted text-base sm:text-xl max-w-2xl mx-auto">
                 Rozwijaj się w przyszłościowych odłamach informatyki
               </p>
             </div>
@@ -90,9 +90,9 @@ function Index() {
 
           <section
             id="zarzad"
-            className="w-full max-w-7xl mx-auto px-4 sm:px-8 py-16 font-[Inter]"
+            className="w-full max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-16 font-[Inter]"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold text-primary mb-4 text-center">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 text-center">
               Zarząd koła
             </h2>
 
