@@ -29,7 +29,7 @@ export const Header = () => {
           </div>
           <Link
             to={"/"}
-            className="font-[GeistMono] font-bold text-3xl sm:text-5xl md:text-6xl text-primary hover:text-cyan transition-colors duration-300 ease-in-out"
+            className="font-[GeistMono] font-bold text-4xl sm:text-5xl md:text-6xl text-primary hover:text-cyan transition-colors duration-300 ease-in-out"
           >
             neμron
           </Link>
@@ -39,7 +39,7 @@ export const Header = () => {
         </div>
         <nav
           ref={navRef}
-          className="flex flex-wrap gap-x-3 gap-y-2 sm:gap-8 md:gap-16 items-center justify-center text-sm sm:text-xl px-4 py-2 font-[Inter]"
+          className="flex flex-wrap gap-x-3 gap-y-2 sm:gap-8 md:gap-16 items-center justify-center text-base sm:text-xl px-4 py-2 font-[Inter]"
         >
           <NavLinks to={"/projekty"}>Projekty</NavLinks>
           <NavLinks to={"/artykuly"}>Artykuły</NavLinks>
@@ -63,7 +63,7 @@ export const Header = () => {
           >
             neμron
           </Link>
-          <nav className="flex w-full flex-wrap gap-x-2 gap-y-1 pl-16 items-center justify-end sm:justify-center sm:pl-0 sm:gap-8 md:gap-16 text-xs sm:text-xl font-[Inter]">
+          <nav className="flex w-full flex-wrap gap-x-2 gap-y-1 pl-16 items-center justify-end sm:justify-center sm:pl-0 sm:gap-8 md:gap-16 text-sm sm:text-xl font-[Inter]">
             <NavLinks to={"/projekty"}>Projekty</NavLinks>
             <NavLinks to={"/artykuly"}>Artykuły</NavLinks>
             <NavLinks to={"/#onas"}>O nas</NavLinks>
