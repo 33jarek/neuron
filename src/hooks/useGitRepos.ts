@@ -2,12 +2,15 @@ import { useQuery } from "@tanstack/react-query";
 
 interface Repo {
   name: string;
+  stargazers_count: number;
+  forks_count: number;
+  pushed_at: string;
 }
 
 export const useGitRepos = () => {
   return useQuery({
     queryKey: ["git-repositories"],
-    queryFn: async (): Promise<string[]> => {
+    queryFn: async (): Promise<Repo[]> => {
       const res = await fetch(
         "https://api.github.com/orgs/kn-neuron-umg/repos",
         {
@@ -23,9 +26,7 @@ export const useGitRepos = () => {
 
       const data: Repo[] = await res.json();
 
-      return data
-        .filter((repo) => repo.name !== ".github")
-        .map((repo) => repo.name);
+      return data.filter((repo) => repo.name !== ".github");
     },
   });
 };
